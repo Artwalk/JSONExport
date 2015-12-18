@@ -113,15 +113,15 @@
                      {
                      "fetchBasicTypeWithSpecialNeedsPropertyFromMap": "",
                      "fetchCustomTypePropertyFromMap": "\t\tif let <!VarName!>Data = dictionary[\"<!JsonKeyName!>\"] as? NSDictionary{\n\t\t\t<!VarName!> = <!VarType!>(fromDictionary: <!VarName!>Data)\n\t\t}\n",
-                     "bodyEnd": "\t}\n",
+                     "bodyEnd": "\n\t\tsuper.init(json: json)\n\t}\n",
                      "fetchBasicTypePropertyFromMap": "\t\t<!VarName!> = dictionary[\"<!JsonKeyName!>\"] as? <!VarType!>\n",
-                     "signature": "\tinit(fromDictionary dictionary: NSDictionary)",
+                     "signature": "\trequired public init(json: JSON)",
                      "fetchArrayOfCustomTypePropertyFromMap": "\t\t<!VarName!> = <!VarType!>()\n\t\tif let <!VarName!>Array = dictionary[\"<!JsonKeyName!>\"] as? [NSDictionary]{\n\t\t\tfor dic in <!VarName!>Array{\n\t\t\t\tlet value = <!ElementType!>(fromDictionary: dic)\n\t\t\t\t<!VarName!>.append(value)\n\t\t\t}\n\t\t}\n",
-                     "comment": "\t/**\n\t * Instantiate the instance using the passed dictionary values to set the properties values\n\t */\n",
+                     "comment": "\t\n",
                      "bodyStart": "{\n"
                      }
                      ],
-    "modelDefinition": "\nclass <!ModelName!>",
+    "modelDefinition": "\npublic class <!ModelName!> : FLServiceObject",
     "genericType": "AnyObject",
     "getter": "",
     "setter": "",
@@ -131,9 +131,9 @@
     ],
     "arrayType": "[<!ElementType!>]",
     "modelDefinitionWithParent": "\n\nclass <!ModelName!> : <!ParentClass!>",
-    "instanceVarDefinition": "\tvar <!VarName!> : <!VarType!>!\n",
+    "instanceVarDefinition": "\tpublic let <!VarName!> : <!VarType!>\n",
     "supportsFirstLineStatement": "false",
     "modelEnd": "\n}",
-    "staticImports": "import Foundation",
+    "staticImports": "import Foundation\nimport FlooNetwork",
     "langName": "Swift"
 }
