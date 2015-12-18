@@ -112,16 +112,16 @@
     "constructors": [
                      {
                      "fetchBasicTypeWithSpecialNeedsPropertyFromMap": "",
-                     "fetchCustomTypePropertyFromMap": "\t\tif let <!VarName!>Data = dictionary[\"<!JsonKeyName!>\"] as? NSDictionary{\n\t\t\t<!VarName!> = <!VarType!>(fromDictionary: <!VarName!>Data)\n\t\t}\n",
+                     "fetchCustomTypePropertyFromMap": "\t\t<!VarName!> = <!VarType!>(json: json[\"<!VarName!>\"] as? JSON ?? JSON())\n",
                      "bodyEnd": "\n\t\tsuper.init(json: json)\n\t}\n",
-                     "fetchBasicTypePropertyFromMap": "\t\t<!VarName!> = dictionary[\"<!JsonKeyName!>\"] as? <!VarType!>\n",
+                     "fetchBasicTypePropertyFromMap": "\t\t<!VarName!> = json[\"<!JsonKeyName!>\"] as? <!VarType!> ?? \"\"\n",
                      "signature": "\trequired public init(json: JSON)",
-                     "fetchArrayOfCustomTypePropertyFromMap": "\t\t<!VarName!> = <!VarType!>()\n\t\tif let <!VarName!>Array = dictionary[\"<!JsonKeyName!>\"] as? [NSDictionary]{\n\t\t\tfor dic in <!VarName!>Array{\n\t\t\t\tlet value = <!ElementType!>(fromDictionary: dic)\n\t\t\t\t<!VarName!>.append(value)\n\t\t\t}\n\t\t}\n",
+                     "fetchArrayOfCustomTypePropertyFromMap": "\n\t\tvar <!VarName!> = <!VarType!>()\n\t\tif let <!VarName!>Array = json[\"<!JsonKeyName!>\"] as? NSArray {\n\t\t\tfor item in <!VarName!>Array{\n\t\t\t\tif let value = item as? JSON {\n\t\t\t\t\t<!VarName!> += [<!ElementType!>(json: value)]\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t\tself.<!VarName!> = <!VarName!>\n\n",
                      "comment": "\t\n",
-                     "bodyStart": "{\n"
+                     "bodyStart": " {\n"
                      }
                      ],
-    "modelDefinition": "\npublic class <!ModelName!> : FLServiceObject",
+    "modelDefinition": "\npublic class <!ModelName!> : FLServiceObject ",
     "genericType": "AnyObject",
     "getter": "",
     "setter": "",

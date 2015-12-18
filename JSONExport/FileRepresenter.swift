@@ -178,7 +178,7 @@ class FileRepresenter{
             fileContent += ". All rights reserved.\n"
         }
         
-        fileContent += "//\tModel file Generated using JSONExport: https://github.com/Ahmed-Ali/JSONExport\n\n"
+        fileContent += "//\tModel file Generated using JSONExport: https://github.com/Artwalk/JSONExport\n\n"
         
     }
     

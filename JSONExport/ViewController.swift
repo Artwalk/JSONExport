@@ -92,6 +92,11 @@ class ViewController: NSViewController, NSUserNotificationCenterDelegate, NSTabl
         loadSupportedLanguages()
         setupNumberedTextView()
         setLanguagesSelection()
+        
+        // Set Swift as default
+        languagesPopup.selectItemWithTitle("Swift - Class")
+        generateUtilityMethods.state = NSOffState
+        
         updateUIFieldsForSelectedLanguage()
     }
     
