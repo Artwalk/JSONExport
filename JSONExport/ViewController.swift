@@ -378,7 +378,6 @@ class ViewController: NSViewController, NSUserNotificationCenterDelegate, NSTabl
     }
     
     
-    
     //MARK: - Generate files content
     /**
     Validates the sourceText string input, and takes any needed action to generate the model classes and view them in the preview panel
@@ -394,6 +393,11 @@ class ViewController: NSViewController, NSUserNotificationCenterDelegate, NSTabl
             tableView.reloadData()
             return;
         }
+       
+        
+        str = str.deleteSubstring(regexString: ",\n.*…").deleteSubstring(regexString: " //.*")
+        print(str)
+        
         var rootClassName = classNameField.stringValue
         if rootClassName.characters.count == 0{
             rootClassName = "RootClass"
@@ -485,3 +489,15 @@ class ViewController: NSViewController, NSUserNotificationCenterDelegate, NSTabl
     
 }
 
+extension String {
+    
+    func deleteSubstring(regexString:String) -> String {
+        do {
+            let regex = try NSRegularExpression(pattern: regexString, options: .caseInsensitive)
+            return regex.stringByReplacingMatches(in: self, options: .reportProgress, range:
+                NSMakeRange(0, self.characters.count), withTemplate: "")
+        } catch {
+            return ""
+        }
+    }
+}
