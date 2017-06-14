@@ -245,6 +245,7 @@
 				TargetAttributes = {
 					E2FA87B41A059AC100648EB6 = {
 						CreatedOnToolsVersion = 6.1;
+						LastSwiftMigration = 0830;
 					};
 				};
 			};
@@ -419,6 +420,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "JSONExport/JSONExport-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -433,6 +435,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "ahmed.ali.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "JSONExport/JSONExport-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
