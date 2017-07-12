@@ -3,7 +3,7 @@
 //
 //	Create by Ahmed Ali on 23/5/2016
 //	Copyright © 2016. All rights reserved.
-//	Model file Generated using JSONExport: https://github.com/Ahmed-Ali/JSONExport
+//	Model file Generated using JSONExport: https://github.com/Artwalk/JSONExport.git
 
 import Foundation
 
