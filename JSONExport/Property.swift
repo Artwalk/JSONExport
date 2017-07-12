@@ -53,6 +53,8 @@ class Property : Equatable{
     The string representation for the property type
     */
     var type : String
+
+    var defaultValue : String
     
     /**
     Whether the property represents a custom type
@@ -108,6 +110,7 @@ class Property : Equatable{
         }
         
         string = string.replacingOccurrences(of: varType, with: type)
+        string = string.replacingOccurrences(of: defaultValue, with: defaultValue)
         string = string.replacingOccurrences(of: varName, with: nativeName)
         string = string.replacingOccurrences(of: jsonKeyName, with: jsonName)
         return string
@@ -140,6 +143,18 @@ class Property : Equatable{
         self.isArray = isArray
         self.isCustomClass = isCustomClass
         self.lang = lang
+        self.defaultValue = type
+
+        switch type {
+        case "Int":
+            defaultValue = "0"
+        case "String":
+            defaultValue = "\"\""
+        case "Bool":
+            defaultValue = "false"
+        default:
+            defaultValue = "\"\""
+        }
     }
     
     

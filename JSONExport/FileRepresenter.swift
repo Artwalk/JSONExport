@@ -268,6 +268,7 @@ class FileRepresenter{
                 set = set?.replacingOccurrences(of: capitalizedVarName, with: capVarName)
                 set = set?.replacingOccurrences(of: varName, with: property.nativeName)
                 set = set?.replacingOccurrences(of: varType, with: property.type)
+                set = set?.replacingOccurrences(of: defaultValue, with: property.defaultValue)
                 fileContent += set!
             }
             
@@ -290,6 +291,7 @@ class FileRepresenter{
                 get = get.replacingOccurrences(of: capitalizedVarName, with: capVarName)
                 get = get.replacingOccurrences(of: varName, with: property.nativeName)
                 get = get.replacingOccurrences(of: varType, with: property.type)
+                get = get.replacingOccurrences(of: defaultValue, with: property.defaultValue)
                 fileContent += get
             }
             
@@ -364,6 +366,7 @@ class FileRepresenter{
                 propertyHandlingStr = propertyHandlingStr.replacingOccurrences(of: varName, with:property.nativeName)
                 propertyHandlingStr = propertyHandlingStr.replacingOccurrences(of: constKeyName, with:property.constName!)
                 propertyHandlingStr = propertyHandlingStr.replacingOccurrences(of: varType, with:property.type)
+                propertyHandlingStr = propertyHandlingStr.replacingOccurrences(of: defaultValue, with:property.defaultValue)
                 
                 propertyHandlingStr = propertyHandlingStr.replacingOccurrences(of: jsonKeyName, with:property.jsonName)
                 
@@ -448,6 +451,7 @@ class FileRepresenter{
         propertyStr = propertyStr.replacingOccurrences(of: jsonKeyName, with: property.jsonName)
         propertyStr = propertyStr.replacingOccurrences(of: constKeyName, with: property.constName!)
         propertyStr = propertyStr.replacingOccurrences(of: varType, with: property.type)
+        propertyStr = propertyStr.replacingOccurrences(of: defaultValue, with: property.defaultValue)
         let capVarName = property.nativeName.capitalized
         let capVarType = property.type.capitalized;
         propertyStr = propertyStr.replacingOccurrences(of: capitalizedVarName, with: capVarName)

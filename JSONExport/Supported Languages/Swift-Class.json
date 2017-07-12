@@ -112,15 +112,15 @@
     "constructors": [
                      {
                      "fetchBasicTypeWithSpecialNeedsPropertyFromMap": "",
-                     "fetchCustomTypePropertyFromMap": "\t\tif let <!VarName!>Data = dictionary[\"<!JsonKeyName!>\"] as? Dict {\n\t\t\t<!VarName!> = <!VarType!>(_: <!VarName!>Data)\n\t\t}\n",
+                     "fetchCustomTypePropertyFromMap": "\t\tif let <!VarName!>Data = dict[\"<!JsonKeyName!>\"] as? Dict {\n\t\t\t<!VarName!> = <!VarType!>(_: <!VarName!>Data)\n\t\t}\n",
                      "bodyEnd": "\t}\n",
-                     "fetchBasicTypePropertyFromMap": "\t\t<!VarName!> = dictionary[\"<!JsonKeyName!>\"] as? <!VarType!>\n",
+                     "fetchBasicTypePropertyFromMap": "\t\t<!VarName!> = dict[\"<!JsonKeyName!>\"] as? <!VarType!> ?? <!defaultValue!>\n",
                      "signature": "\trequired public init(_ dict: Dict)",
-                     "fetchArrayOfCustomTypePropertyFromMap": "\t\t<!VarName!> = <!VarType!>()\n\t\tif let <!VarName!>Array = dictionary[\"<!JsonKeyName!>\"] as? [Dict] {\n\t\t\tfor dic in <!VarName!>Array{\n\t\t\t\tlet value = <!ElementType!>(_: dic)\n\t\t\t\t<!VarName!>.append(value)\n\t\t\t}\n\t\t}\n",
+                     "fetchArrayOfCustomTypePropertyFromMap": "\t\t<!VarName!> = <!VarType!>()\n\t\tif let <!VarName!>Array = dict[\"<!JsonKeyName!>\"] as? [Dict] {\n\t\t\tfor dic in <!VarName!>Array{\n\t\t\t\tlet value = <!ElementType!>(_: dic)\n\t\t\t\t<!VarName!>.append(value)\n\t\t\t}\n\t\t}\n",
                      "bodyStart": "{\n"
                      }
                      ],
-    "modelDefinition": "\nopen class <!ModelName!>",
+    "modelDefinition": "\nopen class <!ModelName!> ",
     "genericType": "AnyObject",
     "getter": "",
     "setter": "",
