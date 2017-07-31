@@ -112,7 +112,7 @@
     "constructors": [
                      {
                      "fetchBasicTypeWithSpecialNeedsPropertyFromMap": "",
-                     "fetchCustomTypePropertyFromMap": "\t\tif let <!VarName!>Data = dict[\"<!JsonKeyName!>\"] as? Dict {\n\t\t\t<!VarName!> = <!VarType!>(_: <!VarName!>Data)\n\t\t}\n",
+                     "fetchCustomTypePropertyFromMap": "\t\t<!VarName!> = <!VarType!>(dict[\"<!JsonKeyName!>\"] as? Dict ?? [:])\n",
                      "bodyEnd": "\t}\n",
                      "fetchBasicTypePropertyFromMap": "\t\t<!VarName!> = dict[\"<!JsonKeyName!>\"] as? <!VarType!> ?? <!defaultValue!>\n",
                      "signature": "\trequired public init(_ dict: Dict) ",
