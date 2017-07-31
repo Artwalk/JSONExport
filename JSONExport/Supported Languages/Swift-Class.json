@@ -120,7 +120,7 @@
                      "bodyStart": "{\n"
                      }
                      ],
-    "modelDefinition": "\nopen class <!ModelName!> ",
+    "modelDefinition": "\nopen class <!ModelName!>: SBType ",
     "genericType": "AnyObject",
     "getter": "",
     "setter": "",
